@@ -68,15 +68,20 @@
    
   }
 
-  .checador-btn{
- margin: 25px 25px 25px 25px;
-  }
-
-  .checador-btn {
+/* Estilos para el botón "checador" */
+.btn-checador {
+    margin: 0; /* Eliminar el margen anterior */
+    padding: 5px 10px; /* Ajustar el padding según sea necesario */
+    background-color: #002fff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
   }
-
-  .checador-btn:hover {
+  
+  .btn-checador:hover {
     background-color: #007bff;
   }
 
