@@ -384,40 +384,10 @@
 
 // Modulo ccs para Personal-detalle
 
-.personal-detalle{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+.table-responsive {
+    width: 100%; 
 }
-
-.tabla-deskopt{
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.tabla-deskopt tr th {
-    background-color: #464646;
-    color: #fdf7f7;
-    border: 1px solid gray;
-    padding: 5px;
-    text-align: left;
-}
-
-.tabla-deskopt tr td {
-    border: 1px solid gray;
-    padding: 5px;
-
-}
-
-.tabla-deskopt tr:nth-of-type(odd){
-    background-color: #464646;
-}
-
-// TABLA MOVIL
-.tabla-mobile{
-    display: none;
-    width: 100%;
-  }
 
 
   } /* de 1048px minimo hasta adelante */

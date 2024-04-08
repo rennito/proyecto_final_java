@@ -37,66 +37,15 @@
         height: 85px;
         border-radius: 50%;
         margin: 0 10px;
-        transition: transform 0.3s ease-in-out; /* Transición de transformación */
+        transition: transform 0.3s ease-in-out; 
       }
 
-      /* Estilos para la transformación al pasar el mouse */
+      
       .profile-image:hover {
-        transform: scale(1.2); /* Aumentar tamaño al pasar el mouse */
+        transform: scale(1.2); 
       }
 
 
-
-// TABLA MOVIL
-.personal-detalle{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.tabla-mobile{
-  display: none;
-  width: 100%;
-}
-
-.tabla-mobile .fila .columna{
-  display: flex;
-}
-
-.tabla-mobile .fila .columna .header,
-.tabla-mobile .fila .columna .contenido{
-border: 1px solid rgb(0, 0, 0);
-border-bottom: none;
-padding: 10px;
-}
-
-.tabla-mobile .fila .columna .header{
-  width: 40%;
-  background-color: #818181;
-  color: white;
-  font-weight: bold;
-}
-
-.tabla-mobile .fila .columna .contenido{
-  width: 40%;
-}
-
-.tabla-mobile .fila:nth-of-type(even) .columna .contenido{
-  background-color: #464646;
-}
-
-.tabla-mobile .fila .columna:last-of-type .contenido,
-.tabla-mobile .fila .columna:last-of-type .header{
-  border-bottom: 1px solid #818181;
-}
-
-.tabla-mobile{
-  display: block;
-}
-
-.tabla-deskopt{
-  display: none;
-}
 }
 
  /* de 0px hasta 639px*/
