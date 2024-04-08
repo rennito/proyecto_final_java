@@ -1,0 +1,423 @@
+@import "variables.scss";
+@media all and (min-width: 1048px) {
+   // css para login.html
+
+
+   .body {
+	background: linear-gradient(-45deg, #030303, #464646, #b6b5b5, #ffffff);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+  
+   body {
+    background-color: $color-body;    
+  }
+  .login-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #fff;   
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  .logo {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    font-weight: bold;
+  }
+  .form-control {
+    border-radius: 20px;
+  }
+  .btn-login {
+    border-radius: 20px;
+  }
+  .profile-images {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    transition: width 2s, height 2s;
+  }
+  .profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 0 10px;
+  }
+
+  .profile-image:hover {
+    width: 300px;
+    height: 300px;
+   
+  }
+
+  .checador-btn{
+ margin: 25px 25px 25px 25px;
+  }
+
+  .checador-btn {
+    transition: background-color 0.3s ease;
+  }
+
+  .checador-btn:hover {
+    background-color: #007bff;
+  }
+
+// css para menu.html
+
+  body {
+    background-color: $color-body;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color:$color-header;
+    color: $color-fonts-header;
+    padding: 10px;
+    display: grid; /* Utiliza grid para el encabezado */
+    grid-template-columns: auto 1fr auto; /* Tres columnas: una para el botón de menú, otra para el nombre de usuario, y otra para el botón de cerrar sesión */
+    align-items: center;
+}
+
+.menu-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color:$color-sidebar;
+    height: 100vh;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.menu-toggle-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+}
+
+.menu-toggle-btn i {
+    font-size: 20px;
+}
+
+.menu-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    color: #fff;
+}
+
+.user-info i {
+    margin-right: 5px;
+}
+
+.logout-btn {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-btn-container {
+    display: flex;
+    align-items: center;
+}
+
+// CALENDARIO CSS
+*{
+    box-sizing: border-box;
+}
+
+.calendar-container{
+    width: 100%;
+    max-width: 1200px;
+    background-color: white;
+    box-shadow: 0 2px 20px #333 ;
+    border-radius: 10px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.calendar-header{
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #333 ;
+}
+
+.calendar-header h1{
+    font-size: 18px;
+    margin: 0;
+}
+
+.calendar-header p{
+    font-size: 13px;
+    margin: 5px;
+    color: #333;
+    font-weight:bold;
+}
+
+.calendar{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(7, minmax(120px, 1fr));
+    grid-template-rows: 50px;
+    grid-auto-rows: 120px;
+}
+
+.day{
+    text-align: right;
+    padding: 14px 20px;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    font-size: 12px;
+    color: #333;
+}
+
+.day-name{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #333;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+}
+
+.day:nth-of-type(7n +7){
+        border-right: none;
+}
+
+.day:nth-of-type(n + 1):nth-of-type(-n + 7){
+    grid-row: 2;
+}
+
+.day:nth-of-type(n + 8):nth-of-type(-n + 14){
+    grid-row: 3;
+}
+
+.day:nth-of-type(n + 15):nth-of-type(-n + 21){
+    grid-row: 4;
+}
+
+.day:nth-of-type(n + 22):nth-of-type(-n + 28){
+    grid-row: 5;
+}
+
+.day:nth-of-type(n + 29):nth-of-type(-n + 35){
+    grid-row: 6;
+}
+
+.day:nth-of-type(n + 36):nth-of-type(-n + 42){
+    grid-row: 7;
+}
+
+
+.day:nth-of-type(7n + 1){
+    grid-column: 1/1;
+}
+
+.day:nth-of-type(7n + 2){
+    grid-column: 2/2;
+}
+
+.day:nth-of-type(7n + 3){
+    grid-column: 3/3;
+}
+
+.day:nth-of-type(7n + 4){
+    grid-column: 4/4;
+}
+
+.day:nth-of-type(7n + 5){
+    grid-column: 5/5;
+}
+.day:nth-of-type(7n + 6){
+    grid-column: 6/6;
+}
+.day:nth-of-type(7n + 7){
+    grid-column: 7/7;
+}
+
+.day-disabled{
+    background-image: url("../img/dislable.png");
+    cursor: not-allowed;
+    
+}
+
+.task{
+    border-left: 3px solid;
+    padding: 8px 12px;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.task-Atiempo{
+    border-left-color: #15ff00 ;
+    background-color: #9eff80;
+    color: #f7fdf8;
+    font-weight: bold;
+    grid-column: 1 / 1 span;
+    grid-row: 3;
+    align-self: center;
+    margin-top: -5px;
+}
+
+
+.task-Retarto{
+    border-left-color: #ff0000 ;
+    background-color: #ff8080;
+    color: #fdf7f7;
+    font-weight: bold;
+    grid-column: 2 / 1 span;
+    grid-row: 3;
+    align-self: center;
+    margin-top: -5px;
+}
+
+.task-Descanzo{
+    border-left-color: #15ff00 ;
+    background-color: #9eff80;
+    color: #f7fdf8;
+    font-weight: bold;
+    grid-column: 7 / 7 span;   
+    grid-row: 5;
+    align-self: center;
+    margin-top: -5px;
+}
+  
+// Modulo ccs para agregar-personal
+
+.menu-container {
+    display: flex;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.menu-toggle-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+}
+
+.menu-toggle-btn i {
+    font-size: 20px;
+}
+
+.menu-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.user-info i {
+    margin-right: 5px;
+}
+
+.logout-btn {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-btn-container {
+    display: flex;
+    align-items: center;
+}
+
+
+// Modulo ccs para Personal-detalle
+
+.personal-detalle{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tabla-deskopt{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-deskopt tr th {
+    background-color: #464646;
+    color: #fdf7f7;
+    border: 1px solid gray;
+    padding: 5px;
+    text-align: left;
+}
+
+.tabla-deskopt tr td {
+    border: 1px solid gray;
+    padding: 5px;
+
+}
+
+.tabla-deskopt tr:nth-of-type(odd){
+    background-color: #464646;
+}
+
+// TABLA MOVIL
+.tabla-mobile{
+    display: none;
+    width: 100%;
+  }
+
+
+  } /* de 1048px minimo hasta adelante */

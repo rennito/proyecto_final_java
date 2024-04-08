@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Lateral</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/large.css" />
+    <link rel="stylesheet" href="styles/medium.css" />
+    <link rel="stylesheet" href="styles/small.css" /> 
+</head>
+<body>
+    <div class="header">
+        <div class="menu-btn-container">
+            <button class="menu-toggle-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="user-info">
+            <i class="fas fa-user"></i>
+            <span>Nombre de Usuario</span>
+        </div>
+        <button class="logout-btn">Cerrar Sesión</button>
+    </div>
+
+    <div class="menu-container">
+        <div class="sidebar" id="sidebar">
+            <div class="menu-item" onclick="window.location.href='menu.html'">
+                <i class="fas fa-home"></i> Inicio</div>
+            <div class="menu-item"><i class="fas fa-user"></i> Perfil</div>
+            <div class="menu-item" onclick="window.location.href='agregar-personal.html'">
+                <i class="fas fa-users"></i> Agregar personal</div>
+            <div class="menu-item" onclick="window.location.href='personal-detalle.html'">               
+                <i class="fas fa-id-card"></i> Personal</div>
+            <div class="menu-item"><i class="fas fa-cog"></i> Configuración</div>
+            <div class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</div>
+        </div>
+        <div class="main-content" id="main-content">
+            <h2>Registro de Empleado</h2>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputNombre">Nombre</label>
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputApellidoPaterno">Apellido Paterno</label>
+                        <input type="text" class="form-control" id="inputApellidoPaterno" placeholder="Apellido Paterno">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputApellidoMaterno">Apellido Materno</label>
+                        <input type="text" class="form-control" id="inputApellidoMaterno" placeholder="Apellido Materno">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Dirección</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Calle padres ">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">Ciudad</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">Estado</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Selecciona...</option>
+                            <option>Aguascalientes</option>
+                            <option>Baja California</option>
+                            <option>Baja California Sur</option>
+                            <option>Campeche</option>
+                            <option>Chiapas</option>
+                            <option>Chihuahua</option>
+                            <option>Coahuila</option>
+                            <option>Colima</option>
+                            <option>Durango</option>
+                            <option>Estado de México</option>
+                            <option>Guanajuato</option>
+                            <option>Guerrero</option>
+                            <option>Hidalgo</option>
+                            <option>Jalisco</option>
+                            <option>Michoacán</option>
+                            <option>Morelos</option>
+                            <option>Nayarit</option>
+                            <option>Nuevo León</option>
+                            <option>Oaxaca</option>
+                            <option>Puebla</option>
+                            <option>Querétaro</option>
+                            <option>Quintana Roo</option>
+                            <option>San Luis Potosí</option>
+                            <option>Sinaloa</option>
+                            <option>Sonora</option>
+                            <option>Tabasco</option>
+                            <option>Tamaulipas</option>
+                            <option>Tlaxcala</option>
+                            <option>Veracruz</option>
+                            <option>Yucatán</option>
+                            <option>Zacatecas</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Código Postal</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="numEmpleado">Número de Empleado:</label>
+                        <input type="text" id="numEmpleado" name="numEmpleado" placeholder="Ingrese el número de empleado" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="genero">Género:</label>
+                        <select id="genero" name="genero" class="form-control">
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="tipoNomina">Tipo de Nómina:</label>
+                        <select id="tipoNomina" name="tipoNomina" class="form-control">
+                            <option value="semanal">Semanal</option>
+                            <option value="quincenal">Quincenal</option>
+                            <option value="mensual">Mensual</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="rfc">RFC:</label>
+                        <input type="text" id="rfc" name="rfc" placeholder="Ingrese su RFC" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label for="estadoCivil">Estado Civil:</label>
+                        <select id="estadoCivil" name="estadoCivil" class="form-control">
+                            <option value="soltero">Soltero/a</option>
+                            <option value="casado">Casado/a</option>
+                            <option value="divorciado">Divorciado/a</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="profesion">Profesión:</label>
+                        <input type="text" id="profesion" name="profesion" placeholder="Ingrese su profesión" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label for="puesto">Puesto:</label>
+                        <input type="text" id="puesto" name="puesto" placeholder="Ingrese su puesto" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPassword">Contraseña</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Acepto términos y condiciones
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector(".logout-btn").addEventListener("click", function () {
+            
+            alert("Sesión cerrada");
+        });
+
+        function toggleMenu() {
+            const sidebar = document.getElementById("sidebar");
+            const mainContent = document.getElementById("main-content");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+                mainContent.style.marginLeft = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
+        }
+    </script>
+</body>
+</html>

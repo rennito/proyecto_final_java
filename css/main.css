@@ -1,0 +1,11 @@
+:root {
+
+    --color-font: "#FFF";
+
+}
+
+
+#container {
+color: --var(--color-font);
+
+}
