@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Lateral</title>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/main.css" />
@@ -48,67 +49,24 @@
         </div>
 
         <div class="main-content" id="main-content">
-            <h2>Calendario</h2>
 
-            <div class="calendar-container">
-                <div class="calendar-header">
-                    <h1>Abril</h1>
-                    <p>2024</p>
-                </div>
-
-
-                <div class="calendar">
-                    <span class="day-name">Lun</span>
-                    <span class="day-name">Mar</span>
-                    <span class="day-name">Mie</span>
-                    <span class="day-name">Jue</span>
-                    <span class="day-name">Vie</span>
-                    <span class="day-name">Sab</span>
-                    <span class="day-name">Dom</span>
-
-                    <div class="day day-disabled">31</div>
-                    <div class="day">1</div>
-                    <div class="day">2</div>
-                    <div class="day">3</div>
-                    <div class="day">4</div>
-                    <div class="day">5</div>
-                    <div class="day">6</div>
-                    <div class="day">7</div>
-                    <div class="day">8</div>
-                    <div class="day">9</div>
-                    <div class="day">10</div>
-                    <div class="day">11</div>
-                    <div class="day">12</div>
-                    <div class="day">13</div>
-                    <div class="day">14</div>
-                    <div class="day">15</div>
-                    <div class="day">16</div>
-                    <div class="day">17</div>
-                    <div class="day">18</div>
-                    <div class="day">19</div>
-                    <div class="day">20</div>
-                    <div class="day">21</div>
-                    <div class="day">22</div>
-                    <div class="day">23</div>
-                    <div class="day">24</div>
-                    <div class="day">25</div>
-                    <div class="day">26</div>
-                    <div class="day">27</div>
-                    <div class="day">28</div>
-                    <div class="day">29</div>
-                    <div class="day">30</div>
-
-                    <section class="task task-Atiempo"> A tiempo</section>
-                    <section class="task task-Retarto"> Retardo</section>
-                    <section class="task task-Descanzo"> Descanzo</section>
-                </div>
-            </div>
+            <div style="max-width: 1000px; margin: auto" id='calendar'></div>
+            <script src="./js/calendar.js"></script>
 
         </div>
     </div>
+    
     <script src="js/colores_contendor.js"></script>
    
-    <script>
+    <script>        
+          document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
         document.querySelector(".logout-btn").addEventListener("click", function () {
            
             alert("Sesión cerrada");

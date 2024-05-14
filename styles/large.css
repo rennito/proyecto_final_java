@@ -18,7 +18,7 @@
     }
   }
   body {
-    background-color: #c7c7c7;
+    background-color: #FFFFFF;
   }
   .login-container {
     max-width: 400px;
@@ -76,13 +76,13 @@
     background-color: #007bff;
   }
   body {
-    background-color: #c7c7c7;
+    background-color: #FFFFFF;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
   }
   .header {
-    background-color: #000000;
+    background-color: #010101;
     color: #ffffff;
     padding: 10px;
     display: grid; /* Utiliza grid para el encabezado */
@@ -94,7 +94,7 @@
   }
   .sidebar {
     width: 250px;
-    background-color: #808080;
+    background-color: #868687;
     height: 100vh;
     overflow-y: auto;
     transition: width 0.3s ease;
