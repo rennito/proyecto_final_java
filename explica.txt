@@ -1,0 +1,44 @@
+
+Claro, aquí está la explicación de la función cargarDatos():
+
+Seleccionando la tabla:
+
+const personalTable = document.getElementById("personalTable").getElementsByTagName("tbody")[0];
+Esta línea obtiene la tabla con el id "personalTable" y selecciona su cuerpo (tbody), que es donde se agregarán las filas de datos.
+Iterando sobre los empleados:
+
+empleados.forEach((empleado) => { ... });
+Utiliza el método forEach para recorrer cada objeto de la lista de empleados.
+Creando filas de la tabla:
+
+const row = document.createElement("tr");
+Crea una nueva fila (<tr>) para cada empleado.
+Llenando las celdas de la fila:
+
+for (const prop in empleado) { ... }
+Recorre cada propiedad del objeto empleado.
+Crea una celda (<td>) para cada propiedad y le asigna el valor correspondiente del empleado.
+Evita crear celdas para las propiedades que no se desean mostrar en la tabla, como "password", "codigoPostal", etc.
+Creando el botón "Ver Más":
+
+const expandBtn = document.createElement("button");
+Crea un nuevo botón.
+Configura el texto del botón como "Ver Más" y le añade la clase "expand-btn".
+Agrega un evento de clic al botón para expandir o contraer los detalles del empleado.
+Manejando la expansión y contracción:
+
+expandBtn.addEventListener("click", function () { ... });
+Define la función que se ejecutará cuando se haga clic en el botón "Ver Más".
+Verifica si el botón está abierto o cerrado utilizando la clase "open".
+Si está cerrado, crea una nueva fila de detalles (<tr>) que contiene las propiedades adicionales del empleado y la agrega después de la fila actual.
+Si está abierto, elimina la fila de detalles existente.
+Actualiza el texto del botón según el estado (abierto/cerrado) y añade o quita la clase "open" para indicar el estado.
+Agregando elementos a la tabla:
+
+detailsCell.appendChild(expandBtn);
+Agrega el botón "Ver Más" a una celda de detalles (<td>).
+row.appendChild(detailsCell);
+Agrega la celda de detalles a la fila principal del empleado.
+personalTable.appendChild(row);
+Agrega la fila completa (con todas las celdas) a la tabla.
+En resumen, la función cargarDatos() crea dinámicamente filas de una tabla HTML para mostrar información de empleados. Además, añade un botón "Ver Más" que permite expandir y contraer detalles adicionales de cada empleado al hacer clic en él.

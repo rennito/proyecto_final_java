@@ -7,18 +7,18 @@
     <title>Menú Lateral</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/large.css" />
     <link rel="stylesheet" href="styles/medium.css" />
     <link rel="stylesheet" href="styles/small.css" />
 </head>
 
-<body>
-    <div class="header">
+<body id="body">
+    <div class="header" id="header">
         <div class="menu-btn-container">
-            <button class="menu-toggle-btn" onclick="toggleMenu()">
+            <button class="menu-toggle-btn" id="btn-sidebar" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </button>
+            <button class="btn btn-hero" id="btn">Cambio de color</button>
         </div>
         <div class="user-info">
             <i class="fas fa-user"></i>
@@ -44,92 +44,79 @@
         </div>
         <div class="main-content" id="main-content">
             <h2>Lista de personal</h2>
-            <form>
-                <div class="container">
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Apellido Paterno</th>
-                                    <th>Apellido Materno</th>
-                                    <th>Dirección</th>
-                                    <th>Ciudad</th>
-                                    <th>Estado</th>
-                                    <th>Codigo Postal</th>
-                                    <th>Numero de Empleado</th>
-                                    <th>Fecha de Nacimiento</th>
-                                    <th>Genero</th>
-                                    <th>Tipo de Nomina</th>
-                                    <th>RFC</th>
-                                    <th>Estado Civil</th>
-                                    <th>Profesion</th>
-                                    <th>Puesto</th>
-                                    <th>Correo</th>
-                                    <th>Contraseña</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Jose Rodolfo</td>
-                                    <td>Alvarado</td>
-                                    <td>Hernandez</td>
-                                    <td>Xocotitlan 5192</td>
-                                    <td>Los Mochis</td>
-                                    <td>Sinaloa</td>
-                                    <td>81240</td>
-                                    <td>10458</td>
-                                    <td>21/12/1989</td>
-                                    <td>Masculino</td>
-                                    <td>Quincenal</td>
-                                    <td>0x0x0x0x0x0x0</td>
-                                    <td>Casado</td>
-                                    <td>Ingenerio en Sistemas Computacionales</td>
-                                    <td>Desarrollador Backend</td>
-                                    <td>loco_2189@hotmail.com</td>
-                                    <td>1234567890</td>
-                                </tr>
-                                <tr>
-                                    <td>Jose Rodolfo</td>
-                                    <td>Alvarado</td>
-                                    <td>Hernandez</td>
-                                    <td>Xocotitlan 5192</td>
-                                    <td>Los Mochis</td>
-                                    <td>Sinaloa</td>
-                                    <td>81240</td>
-                                    <td>10458</td>
-                                    <td>21/12/1989</td>
-                                    <td>Masculino</td>
-                                    <td>Quincenal</td>
-                                    <td>0x0x0x0x0x0x0</td>
-                                    <td>Casado</td>
-                                    <td>Ingenerio en Sistemas Computacionales</td>
-                                    <td>Desarrollador Backend</td>
-                                    <td>loco_2189@hotmail.com</td>
-                                    <td>1234567890</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="container table-container">
+                <div class="table-responsive">
+                    <table class="table table-striped" id="personalTable">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido Paterno</th>
+                                <th>Apellido Materno</th>
+                                <th>Dirección</th>
+                                <th>Ciudad</th>
+                                <th>Estado</th>
+                                <th>Detalles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filas de datos -->
+                        </tbody>
+                    </table>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
+    <script src="js/colores_contendor.js"></script>
+    <script src="js/tableEmpleados.js"></script>
     <script>
         document.querySelector(".logout-btn").addEventListener("click", function () {
             alert("Sesión cerrada");
         });
 
-        function toggleMenu() {
-            const sidebar = document.getElementById("sidebar");
-            const mainContent = document.getElementById("main-content");
-            if (sidebar.style.width === "250px") {
-                sidebar.style.width = "0";
-                mainContent.style.marginLeft = "0";
-            } else {
-                sidebar.style.width = "250px";
+        // Datos de ejemplo para llenar la tabla
+        const empleados = [
+            {
+                nombre: "Jose Rodolfo",
+                apellidoPaterno: "Alvarado",
+                apellidoMaterno: "Hernandez",
+                direccion: "Xocotitlan 5192",
+                ciudad: "Los Mochis",
+                estado: "Sinaloa",
+                codigoPostal: "81240",
+                numEmpleado: "10458",
+                fechaNacimiento: "21/12/1989",
+                genero: "Masculino",
+                tipoNomina: "Quincenal",
+                rfc: "0x0x0x0x0x0x0",
+                estadoCivil: "Casado",
+                profesion: "Ingeniero en Sistemas Computacionales",
+                puesto: "Desarrollador Backend",
+                email: "loco_2189@hotmail.com",
+                password: "1234567890"
+            },
+            {
+                nombre: "Maria Fernanda",
+                apellidoPaterno: "Garcia",
+                apellidoMaterno: "Rodriguez",
+                direccion: "Calle del Sol 123",
+                ciudad: "Ciudad de México",
+                estado: "Ciudad de México",
+                codigoPostal: "12345",
+                numEmpleado: "20015",
+                fechaNacimiento: "15/05/1995",
+                genero: "Femenino",
+                tipoNomina: "Mensual",
+                rfc: "0A1B2C3D4E5F",
+                estadoCivil: "Soltera",
+                profesion: "Arquitecta",
+                puesto: "Diseñadora de Interiores",
+                email: "mariafernanda@gmail.com",
+                password: "qwerty123"
             }
-        }
+            // Agrega más objetos de empleados aquí si es necesario
+        ];
+
+
     </script>
 </body>
 

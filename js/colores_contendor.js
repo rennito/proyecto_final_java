@@ -5,6 +5,7 @@ const btn = document.getElementById("btn");
 const body = document.getElementById("body");
 const header = document.getElementById("header");
 const sidebar = document.getElementById("sidebar");
+const btnsidebar = document.getElementById("btn-sidebar");
 const color = document.querySelector(".color");
 
 let colorIndex = 0; // Índice para controlar la secuencia de colores
@@ -15,18 +16,24 @@ btn.addEventListener("click", function () {
     body.style.backgroundColor = colors[2]; // Blanco
     header.style.backgroundColor = colors[0]; // Azul fuerte
     sidebar.style.backgroundColor = colors[1]; // Azul claro
+    btnsidebar.style.backgroundColor = colors[1]; // Azul claro
+    btn.style.backgroundColor = colors[1]; // Azul claro
     
   } else if (colorIndex === 1) {
     // Asignar colores del segundo conjunto
     body.style.backgroundColor = colors1[2]; // Negro
     header.style.backgroundColor = colors1[0]; // Gris
     sidebar.style.backgroundColor = colors1[1]; // Blanco
+    btnsidebar.style.backgroundColor = colors1[1]; // Blanco
+    btn.style.backgroundColor = colors1[1]; // Blanco
     
   } else if (colorIndex === 2) {
     // Asignar colores del tercer conjunto
     body.style.backgroundColor = colors2[2]; // Rojo oscuro
     header.style.backgroundColor = colors2[0]; // Rojo
     sidebar.style.backgroundColor = colors2[1]; // Rosa claro
+    btnsidebar.style.backgroundColor = colors2[1]; // Rosa claro
+    btn.style.backgroundColor = colors2[1]; // Rosa claro
     
   }
 
@@ -42,5 +49,20 @@ btn.addEventListener("dblclick", function () {
   body.style.backgroundColor = "";
   header.style.backgroundColor = "";
   sidebar.style.backgroundColor = "";
+  btnsidebar.style.backgroundColor = "";
+  btn.style.backgroundColor = "";
   
 });
+
+
+// Funcion para ocultar el sidebar
+function toggleMenu() {
+  const sidebar = document.getElementById("sidebar");
+  const mainContent = document.getElementById("main-content");
+  if (sidebar.style.width === "250px") {
+      sidebar.style.width = "0";
+      mainContent.style.marginLeft = "0";
+  } else {
+      sidebar.style.width = "250px";
+  }
+}

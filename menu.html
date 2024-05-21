@@ -1,50 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menú Lateral</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="styles/large.css" />
     <link rel="stylesheet" href="styles/medium.css" />
     <link rel="stylesheet" href="styles/small.css" />
 </head>
+
 <body id="body">
     <div class="header" id="header">
         <div class="menu-btn-container">
-            <button class="menu-toggle-btn" onclick="toggleMenu()">
+            <button class="menu-toggle-btn" id="btn-sidebar" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </button>
+            <button class="btn btn-hero" id="btn">Cambio de color</button>
         </div>
         <div class="user-info">
             <i class="fas fa-user"></i>
             <span>Nombre de Usuario</span>
         </div>
-        <button class="logout-btn">Cerrar Sesión</button>        
-        <div class="container">           
-            <button class="btn btn-hero" id="btn">click me</button>
-          </div>
+        <button class="logout-btn">Cerrar Sesión</button>
     </div>
 
     <div class="menu-container">
         <div class="sidebar" id="sidebar">
             <div class="menu-item" onclick="window.location.href='menu.html'">
-                <i class="fas fa-home"></i> Inicio</div>
+                <i class="fas fa-home"></i> Inicio
+            </div>
 
             <div class="menu-item"><i class="fas fa-user"></i> Perfil</div>
 
             <div class="menu-item" onclick="window.location.href='agregar-personal.html'">
-                <i class="fas fa-users"></i> Agregar personal</div>
-            
-            <div class="menu-item" onclick="window.location.href='personal-detalle.html'">               
-                <i class="fas fa-id-card"></i> Personal</div>
-            
-                <div class="menu-item" onclick="window.location.href='configuracion.html'">
-                    <i class="fas fa-cog"></i> Configuración</div>
-            
-                <div class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</div>
+                <i class="fas fa-users"></i> Agregar personal
+            </div>
+
+            <div class="menu-item" onclick="window.location.href='personal-detalle.html'">
+                <i class="fas fa-id-card"></i> Personal
+            </div>
+
+            <div class="menu-item" onclick="window.location.href='configuracion.html'">
+                <i class="fas fa-cog"></i> Configuración
+            </div>
+
+            <div class="menu-item">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </div>
         </div>
 
         <div class="main-content" id="main-content">
@@ -55,7 +60,6 @@
                     <h1>Abril</h1>
                     <p>2024</p>
                 </div>
-
 
                 <div class="calendar">
                     <span class="day-name">Lun</span>
@@ -98,33 +102,21 @@
                     <div class="day">29</div>
                     <div class="day">30</div>
 
-                    <section class="task task-Atiempo"> A tiempo</section>
-                    <section class="task task-Retarto"> Retardo</section>
-                    <section class="task task-Descanzo"> Descanzo</section>
+                    <section class="task task-Atiempo">A tiempo</section>
+                    <section class="task task-Retarto">Retardo</section>
+                    <section class="task task-Descanzo">Descanzo</section>
                 </div>
             </div>
-
         </div>
     </div>
     <script src="js/colores_contendor.js"></script>
-   
+
     <script>
-        document.querySelector(".logout-btn").addEventListener("click", function () {
-           
-            alert("Sesión cerrada");
-        });
-
-        function toggleMenu() {
-            const sidebar = document.getElementById("sidebar");
-            const mainContent = document.getElementById("main-content");
-            if (sidebar.style.width === "250px") {
-                sidebar.style.width = "0";
-                mainContent.style.marginLeft = "0";
-            } else {
-                sidebar.style.width = "250px";
-
-            }
-        }
+        document
+            .querySelector(".logout-btn")
+            .addEventListener("click", function () {
+                alert("Sesión cerrada");
+            });
     </script>
 </body>
 

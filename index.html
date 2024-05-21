@@ -5,13 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iniciar Sesión</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />  
   <link rel="stylesheet" href="styles/large.css" />
   <link rel="stylesheet" href="styles/medium.css" />
   <link rel="stylesheet" href="styles/small.css" />
+  <style>
+    .hidden {
+      display: none;
+    }
+    .spacer {
+      height: 20px; /* Puedes ajustar la altura según tu preferencia */
+    }
+    .btn-login {
+      margin-bottom: 10px; /* Agregar margen inferior al botón de Iniciar Sesión */
+    }
+  </style>
 </head>
-
 <body class="body">  
     <button class="btn btn-primary btn-block btn-checador"  onclick="window.location.href='captura-qr.html'" >Checador</button>
     <div id="container">
@@ -19,7 +28,7 @@
       <div class="logo">
         <img src="img/LOGO BLANCO.png" alt="Logo" width="100" />
       </div>
-      <form>
+      <form id="loginForm">
         <div class="form-group">
           <label for="username">Usuario</label>
           <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario" />
@@ -28,11 +37,45 @@
           <label for="password">Contraseña</label>
           <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" />
         </div>
-        <button type="button" class="btn btn-primary btn-block btn-login" onclick="window.location.href='menu.html'">
+        <button type="submit" class="btn btn-primary btn-block btn-login">
           Iniciar Sesión
+        </button>
+        
+      </form>
+    </div>
+    <!-- Espacio entre el botón y el formulario -->
+    <div class="spacer"></div>
+    <!-- Fin del espacio -->
+    <!-- Aquí se agrega el formulario de registro con la clase oculta -->
+    <div class="register-container hidden">
+      <h2>Registro de Usuario</h2>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="nombreCompleto">Nombre Completo</label>
+          <input type="text" class="form-control" id="nombreCompleto" placeholder="Ingrese su nombre completo" required />
+        </div>
+        <div class="form-group">
+          <label for="puesto">Puesto</label>
+          <input type="text" class="form-control" id="puesto" placeholder="Ingrese su puesto" required />
+        </div>
+        <div class="form-group">
+          <label for="cumpleanos">Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="cumpleanos" required />
+        </div>
+        <div class="form-group">
+          <label for="nuevoUsuario">Nuevo Usuario</label>
+          <input type="text" class="form-control" id="nuevoUsuario" placeholder="Ingrese su nuevo usuario" required />
+        </div>
+        <div class="form-group">
+          <label for="nuevaContrasena">Nueva Contraseña</label>
+          <input type="password" class="form-control" id="nuevaContrasena" placeholder="Ingrese su nueva contraseña" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Registrarse
         </button>
       </form>
     </div>
+    <!-- Fin del formulario de registro -->
     <div class="profile-images">
       <img src="img/control-asistencia-1.png" alt="Imagen 1" class="profile-image" />
       <img src="img/control-asistencia-2.png" alt="Imagen 2" class="profile-image" />
@@ -40,6 +83,29 @@
       <img src="img/control-asistencia-4.png" alt="Imagen 4" class="profile-image" />
     </div>
   </div>
+  <script defer src="js/registrarUsuario.js"></script>
+  <script defer src="js/inicioSesion.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleRegisterBtn = document.createElement("button");
+      toggleRegisterBtn.id = "toggleRegisterFormBtn";
+      toggleRegisterBtn.classList.add("btn", "btn-primary", "btn-block");
+      toggleRegisterBtn.textContent = "Abrir Registro";
+      toggleRegisterBtn.addEventListener("click", function () {
+        const registerContainer = document.querySelector(".register-container");
+        registerContainer.classList.toggle("hidden");
+        if (registerContainer.classList.contains("hidden")) {
+          toggleRegisterBtn.textContent = "Abrir Registro";
+        } else {
+          toggleRegisterBtn.textContent = "Cerrar Registro";
+        }
+      });
+
+      const loginContainer = document.querySelector(".login-container");
+      loginContainer.appendChild(toggleRegisterBtn);
+    });
+  </script>
 </body>
 
 </html>
